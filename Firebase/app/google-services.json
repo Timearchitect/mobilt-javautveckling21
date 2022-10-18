@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "513260891542",
+    "project_id": "onlinedatabase-2cd29",
+    "storage_bucket": "onlinedatabase-2cd29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513260891542:android:88e5e241e0e6993a1381b7",
+        "android_client_info": {
+          "package_name": "com.gritacademy.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513260891542-17hb4r73mad0gfuob894emma7ntiam2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gritacademy.firebase",
+            "certificate_hash": "443033dce093ea3da3007d9482b3f70f7a06b237"
+          }
+        },
+        {
+          "client_id": "513260891542-3pva62sdrp0lbg3eefbnn4pi6vh1sre4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEQ6atzc5G4nnsErjsWemFcgKCP7xQ7vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513260891542-3pva62sdrp0lbg3eefbnn4pi6vh1sre4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

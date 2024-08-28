@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Hello world app</string>
     <string name="test">!!!!Change!!!!</string>
+    <string name="lang">ENGLISH</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">blank frag 1</string>
+    <string name="hello_blank_fragment2" translatable="false">blank frag 2</string>
 </resources>

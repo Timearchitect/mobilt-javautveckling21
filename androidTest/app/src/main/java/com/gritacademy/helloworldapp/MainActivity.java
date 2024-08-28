@@ -1,6 +1,9 @@
 package com.gritacademy.helloworldapp;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -22,15 +25,18 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity  implements SensorEventListener {
     boolean connected;
+    FragmentManager fm;
+    int fragNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fm = getSupportFragmentManager();
+
         Log.i("alrik", "onCreate");
 
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-
 
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
@@ -50,7 +56,6 @@ public class MainActivity extends AppCompatActivity  implements SensorEventListe
 
         b.setText(R.string.test); // setText från resurs mappen
 
-
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,13 +63,22 @@ public class MainActivity extends AppCompatActivity  implements SensorEventListe
             }
         };
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+        b.setOnClickListener((e)-> {
+                Toast.makeText(MainActivity.this, "Change Fragemnts", Toast.LENGTH_SHORT).show();
                 tv.setText(String.valueOf(connected));
 
-            }
+        if(fragNumber==1) {
+            fm.beginTransaction()
+                    .add(R.id.fragmentContainerView2, BlankFragment2.class, null) // gets the first animations
+                    .commit();
+            fragNumber=2;
+        }else{
+            fm.beginTransaction()
+                    .add(R.id.fragmentContainerView2, BlankFragment.class, null) // gets the first animations
+                    .commit();
+            fragNumber=1;
+        }
+
 
         });
 
@@ -110,7 +124,6 @@ public class MainActivity extends AppCompatActivity  implements SensorEventListe
 //            Toast.makeText(this, String.valueOf(((Button)v).getText()), Toast.LENGTH_SHORT).show();
 //        });
 
-
         if (true) {
             System.out.println("TJENA");
             Log.i("alrik", "Hello World");
@@ -119,7 +132,6 @@ public class MainActivity extends AppCompatActivity  implements SensorEventListe
 
 
     }
-
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
